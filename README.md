@@ -60,6 +60,6 @@ npm run dev
 
 ### 6. Project Structure
 
-/src/components: Reusable UI components (Modals, Buttons, etc.).
-/src/libs: API connection logic and React Query hooks.
-/src/utils: Utility functions such as Toast notifications and other helpers.
+- /src/components: Reusable UI components (Modals, Buttons, etc.).
+- /src/libs: API connection logic and React Query hooks.
+- /src/utils: Utility functions such as Toast notifications and other helpers.
