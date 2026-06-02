@@ -1,22 +1,12 @@
 "use client";
 
 import { getUserInfo } from "@/utils/getUserInfo";
-import {
-  BriefcaseBusiness,
-  BriefcaseConveyorBelt,
-  LucideBriefcase,
-  User2,
-} from "lucide-react";
+import { BriefcaseBusiness, User2 } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const Routes = [
   { url: "/job-list", name: "Job List", icon: BriefcaseBusiness },
-  {
-    url: "/job-management",
-    name: "Job Management",
-    icon: BriefcaseConveyorBelt,
-  },
 ];
 
 const Sidebar = () => {
@@ -36,7 +26,6 @@ const Sidebar = () => {
   return (
     <div className="text-black font-medium bg-white shadow-xl w-64 h-[calc(100dvh-60px)] border-r">
       <div className="flex flex-col w-full">
-        {/* User Info Section */}
         <div className="border-b flex items-center gap-3 py-6 px-4 bg-gray-50">
           <div className="border bg-white rounded-full p-2 w-12 h-12 flex items-center justify-center shadow-sm">
             <User2 className="text-gray-600" />
@@ -52,12 +41,10 @@ const Sidebar = () => {
           </div>
         </div>
 
-        {/* Navigation Menu */}
         <div className="flex-1 mt-4">
           {Routes.map((route) => {
             return (
               <div key={route.name} className="border-b border-gray-100">
-                {/* Main Menu Item */}
                 <button
                   className={`flex items-center justify-between px-4 py-4 w-full text-left transition-colors hover:bg-gray-50 ${
                     isCurrentPath(route.url || "")

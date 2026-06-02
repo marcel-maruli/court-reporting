@@ -21,7 +21,6 @@ const Login = () => {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm<LoginPayload>();
 
@@ -36,7 +35,7 @@ const Login = () => {
     if (userFound) {
       showToast("Login successful!", "success");
       document.cookie = `userAuth=${JSON.stringify({ email, role: userFound.role, username: userFound.name })}; path=/`;
-      router.replace("/job-list");
+      router.push("/job-list");
     } else {
       showToast("Invalid email or password", "error");
     }

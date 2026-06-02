@@ -1,5 +1,14 @@
 import https from "../https";
-import { JobCreatePayload, JobCreateResponse, JobResponse } from "./models";
+import {
+  AudioTranscription,
+  AudioTranscriptionPayload,
+  AudioTranscriptionResponse,
+  Job,
+  JobCreatePayload,
+  JobCreateResponse,
+  JobResponse,
+  UpdateStatusJobPayload,
+} from "./models";
 
 export const getJobs = async (): Promise<JobResponse> => {
   try {
@@ -9,9 +18,11 @@ export const getJobs = async (): Promise<JobResponse> => {
     console.error("Error fetching jobs:", error);
     throw error;
   }
-}
+};
 
-export const createJob = async (jobData: JobCreatePayload): Promise<JobCreateResponse> => {
+export const createJob = async (
+  jobData: JobCreatePayload,
+): Promise<JobCreateResponse> => {
   try {
     const response = await https.post("/api/jobs", jobData);
     return response.data;
@@ -19,4 +30,32 @@ export const createJob = async (jobData: JobCreatePayload): Promise<JobCreateRes
     console.error("Error creating job:", error);
     throw error;
   }
-}   
+};
+
+export const getAudioTranscription = async (
+  payload: AudioTranscriptionPayload,
+): Promise<AudioTranscription> => {
+  try {
+    const response = await https.post("/upload-audio", payload, {
+      headers: {
+        "Content-Type": "multipart/form-data"
+      }
+    });
+    return response.data;
+  } catch (error) {
+    console.error("Error transcrip audio:", error);
+    throw error;
+  }
+};
+
+
+export const updateJobStatus = async ({jobId,recordingText,status}: UpdateStatusJobPayload): Promise<Job> => {
+try {
+   const response = await https.patch(`/api/jobs/${jobId}/status`, {status, recordingText});
+    return response.data;
+  
+} catch (error) {
+   console.error("Error transcrip audio:", error);
+    throw error;
+}
+} 

@@ -2,9 +2,10 @@ import { ApiResponse } from "../apiResponse";
 
 export type JobResponse = ApiResponse<Job[]>;
 export type JobCreateResponse = ApiResponse<Job>;
+export type AudioTranscriptionResponse = ApiResponse<AudioTranscription>;
 
 export interface Job {
- id: number;
+  id: number;
   case_name: string;
   duration_minutes: number;
   status: string;
@@ -36,3 +37,18 @@ interface UserPayment {
   payout: string | number;
   payout_status: string | null;
 }
+
+export interface AudioTranscriptionPayload {
+  audio: File;
+}
+
+export type AudioTranscription = {
+  transcription: string;
+};
+
+export type UpdateStatusJobPayload = {
+  jobId: number;
+  status?: "NEW" | "ASSIGNED" | "TRANSCRIBED" | "REVIEWED" | "COMPLETED";
+  recordingText?: string
+};
+

@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Court Reporting Manager
 
-## Getting Started
+An integrated Court Reporting management system designed to efficiently handle transcription workflows, reviews, and automated payout calculations for Reporters and Editors.
 
-First, run the development server:
+## 🚀 Key Features
+
+- **Job Management:** Track job statuses from _pending_, _transcribed_, and _reviewed_, through to _completed_.
+- **Transcription System:** Supports audio file uploads with AI integration for automated transcription results.
+- **Automated Payouts:** Intelligent calculation of earnings for Reporters and Editors based on duration and role.
+- **Role-Based Dashboard:** Secure access control for Admins, Editors, and Reporters to streamline the workflow.
+
+## 🛠️ Tech Stack
+
+- **Framework:** [Next.js 16](https://nextjs.org/) (App Router)
+- **Language:** TypeScript
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+- **State Management/Data Fetching:** [TanStack React Query](https://tanstack.com/query/latest)
+- **Forms:** [React Hook Form](https://react-hook-form.com/)
+- **Icons:** [Lucide React](https://lucide.dev/)
+
+## 📋 Installation Guide
+
+### 1. Clone Repository
+
+```bash
+git clone https://github.com/marcel-maruli/court-reporting.git
+cd court-reporting
+```
+
+### 2. Dependencies Installation
+
+```bash
+npm install
+```
+
+### 3. .env Configuration
+
+```bash
+NEXT_PUBLIC_API_URL=[https://api-court-reporting-manager-esfx.vercel.app/](https://api-court-reporting-manager-esfx.vercel.app/)
+```
+
+### 4. Running Application
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 5. Login with these
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Nama         | Email                    | Role     | Password |
+| ------------ | ------------------------ | -------- | -------- |
+| Caleb Brown  | caleb.brown@example.com  | Admin    | 12345    |
+| David Miller | david.miller@example.com | Editor   | 12345    |
+| Jane Smith   | jane.smith@example.com   | Reporter | 12345    |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 6. Project Structure
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+/src/components: Reusable UI components (Modals, Buttons, etc.).
+/src/libs: API connection logic and React Query hooks.
+/src/utils: Utility functions such as Toast notifications and other helpers.
