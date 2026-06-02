@@ -20,9 +20,9 @@ export default function Table<T extends { id?: number | string }>({
   isLoading,
 }: TableProps<T>) {
   return (
-    <div className="overflow-x-auto rounded-lg border border-gray-200 shadow-sm">
+    <div className="overflow-x-auto rounded-lg border border-gray-200 shadow-sm ">
       <table className="min-w-full divide-y divide-gray-200 bg-white text-sm">
-        <thead className="bg-gray-50">
+        <thead className="bg-gray-50 sticky top-0 z-10">
           <tr>
             {columns.map((col, idx) => (
               <th
@@ -54,7 +54,7 @@ export default function Table<T extends { id?: number | string }>({
           ) : Number(data?.length) > 0 ? (
             data?.map((item, index) => (
               <tr
-                key={item.id}
+                key={`item-${item.id} ${index}`}
                 onClick={() => onRowClick?.(item)}
                 className={`
                   transition-colors duration-200

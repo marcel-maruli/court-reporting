@@ -25,9 +25,7 @@ const Navbar = () => {
           <ArrowLeft size={20} />
         </button>
       )}
-      <p className="text-white font-medium">
-        {isUserDetail ? "User Detail" : "User Ops Workspace"}
-      </p>
+      <p className="text-white font-medium">Court Reporting System</p>
     </div>
   );
 };
