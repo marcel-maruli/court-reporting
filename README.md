@@ -41,7 +41,7 @@ npm install
 ### 3. .env Configuration
 
 ```bash
-NEXT_PUBLIC_API_URL=[https://api-court-reporting-manager-esfx.vercel.app/](https://api-court-reporting-manager-esfx.vercel.app/)
+NEXT_PUBLIC_API_URL= https://api-court-reporting-manager-esfx.vercel.app/
 ```
 
 ### 4. Running Application
