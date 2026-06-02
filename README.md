@@ -2,6 +2,11 @@
 
 An integrated Court Reporting management system designed to efficiently handle transcription workflows, reviews, and automated payout calculations for Reporters and Editors.
 
+**Live Demo:** [https://court-reporting-phi.vercel.app/](https://court-reporting-phi.vercel.app/)
+
+![App Login Screenshot](./assets/LoginPage.png)
+![App Dashboard Screenshot](./assets/Dashboard.png)
+
 ## 🚀 Key Features
 
 - **Job Management:** Track job statuses from _pending_, _transcribed_, and _reviewed_, through to _completed_.
