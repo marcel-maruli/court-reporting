@@ -1,10 +1,8 @@
 "use client";
 
 import { ArrowLeft, LogOut } from "lucide-react";
-import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import Icon from "@/assets/icon.png";
 
 const Navbar = () => {
   const { back } = useRouter();
